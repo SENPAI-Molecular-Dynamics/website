@@ -1,0 +1,97 @@
+/* || FONTS */
+
+@font-face {
+	font-family: 'Hack';
+	src: url('./fonts/Hack-BoldItalic.ttf');
+	font-weight: bold;
+	font-style: italic, oblique;
+}
+
+@font-face {
+	font-family: 'Hack';
+	src: url('./fonts/Hack-Bold.ttf');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Hack';
+	src: url('./fonts/Hack-Italic.ttf');
+	font-style: italic, oblique;
+}
+
+@font-face {
+	font-family: 'Hack';
+	src: url('./fonts/Hack-Regular.ttf');
+}
+
+/* || GENERAL */
+
+body {
+	background-color: rgb(37, 37, 37);
+	color: rgb(184, 184, 184);
+	margin: 0em;
+	font-family: 'Hack';
+}
+
+header {
+	text-align: center;
+	padding: 1em;
+}
+
+main {
+	margin: 1em;
+}
+
+div {
+	padding: 1em;
+}
+
+h1 {
+	color: rgb(223, 223, 223);
+	font-style: italic;
+	font-size: 48px;
+}
+
+h2 {
+	color: rgb(223, 223, 223);
+	font-size: 32px;
+	text-align: center;
+}
+
+h3 {
+	font-size: 18px;
+}
+
+a:link {
+	color: rgb(184, 184, 184);
+}
+
+a:visited {
+	color: rgb(100, 100, 100);
+}
+
+/* || GRID (mmmmm, grid) */
+
+.grid {
+	display: flex;
+	flex-flow: wrap row;
+	justify-content: center;
+}
+
+.grid_item {
+	background-color: rgb(45, 45, 45);
+	flex-basis: 25%;
+	border-radius: 1em;
+	margin: 1em;
+}
+
+.grid_text {
+	background-color: rgb(45, 45, 45);
+	margin: 1em;
+}
+
+/* || LINKS */
+
+.links {
+	text-align: center;
+}
