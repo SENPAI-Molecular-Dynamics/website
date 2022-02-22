@@ -2,26 +2,26 @@
 
 @font-face {
 	font-family: 'Hack';
-	src: url('./fonts/Hack-BoldItalic.ttf');
+	src: url('../fonts/Hack-BoldItalic.ttf');
 	font-weight: bold;
 	font-style: italic, oblique;
 }
 
 @font-face {
 	font-family: 'Hack';
-	src: url('./fonts/Hack-Bold.ttf');
+	src: url('../fonts/Hack-Bold.ttf');
 	font-weight: bold;
 }
 
 @font-face {
 	font-family: 'Hack';
-	src: url('./fonts/Hack-Italic.ttf');
+	src: url('../fonts/Hack-Italic.ttf');
 	font-style: italic, oblique;
 }
 
 @font-face {
 	font-family: 'Hack';
-	src: url('./fonts/Hack-Regular.ttf');
+	src: url('../fonts/Hack-Regular.ttf');
 }
 
 /* || GENERAL */
