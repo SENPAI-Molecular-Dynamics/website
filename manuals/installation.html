@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel='stylesheet' type='text/css' href='https://www.chelsea486mhz.fr/style.css'>
+        <title>SENPAI manuals</title>
+    </head>
+    <body>
+        <h1>SENPAI installation manual</h1>
+        <p>This manual covers the installation process for the SENPAI molecular dynamics simulator on POSIX systems.<br/>
+           At the end of the manual, the user is left with a useable simulator on the target system.</p>
+
+
+
+        <h2>Required software</h2>
+        <ul>
+            <li>A POSIX compliant system</li>
+            <li>A C99 compliant compiler</li>
+            <li>A C99 compliant libc</li>
+            <li>GNU Make</li>
+        </ul>
+
+
+
+        <h2>Getting the source code</h2>
+        <p>The source code for the latest release can be downloaded from the official senpai website at the following address:</p>
+        <p><a href="https://www.chelsea486mhz.fr/senpai/source/latest.tar.gz">https://www.chelsea486mhz.fr/senpai/source/latest.tar.gz</a></p>
+
+        <p>The wget command can be used to download the archive directly. The tar command is used to unpack the archive:</p>
+        <p>$ wget https://www.chelsea486mhz.fr/senpai/source/latest.tar.gz<br/>
+           $ tar -xvzf latest.tar.gz<br/>
+           $ cd senpai</p>
+
+
+
+        <h2>Configuring the source code</h2>
+        <p>Edit the file headers/config.h to configure the source code to your liking.<br/>
+           Detailed explanations for each paramater are provided within that file.</p>
+        <p>$ vim headers/config.h</p>
+
+
+
+        <h2>Building and installing the binaries</h2>
+        <p>With the source code configured, use GNU make to build and install the software:</p>
+        <p>$ make<br/>
+           $ make install</p>
+        
+        <p>SENPAI is now installed on the system and ready for use.</p>
+    </body>
+</html>

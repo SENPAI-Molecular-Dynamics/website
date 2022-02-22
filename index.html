@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel='stylesheet' type='text/css' href='https://www.chelsea486mhz.fr/style.css'>
+        <script src="https://kit.fontawesome.com/7a6b0f1824.js" crossorigin="anonymous"></script>
+        <title>SENPAI</title>
+    </head>
+    <body>
+        <h1>SENPAI molecular dynamics</h1>
+        <div class="subtitle">
+            <p>Cheminformatics for the 21st century</p>
+        </div>
+        <div class="links">
+            <i class="fab fa-github"></i> <a href="https://github.com/Chelsea486MHz/senpai">GitHub repository</a>
+            <i class="fas fa-envelope"></i> <a href="mailto:chelsea486mhz@protonmail.com">Email</a>
+        </div>
+
+
+
+        <br/><br/>
+        <h2>What is SENPAI?</h2>
+        <figure style="float: right;">
+            <img style="max-width:100%;" alt="SENPAI being used to simulate a deep eutectic solvent" src="https://www.chelsea486mhz.fr/senpai/images/senpai.png"/>
+            <figcaption style="text-align: center;">SENPAI being used to simulate a deep eutectic solvent</figcaption>
+        </figure>
+        <p>SENPAI (Simplified Evolutive N-body Processing And Integration) is a free, open source molecular dynamics simulator licensed under the GPLv3.</p>
+        <p>
+            Given 3D representations of chemical substrates (to the atomic level), and a user-selected mathematical model of the universe, SENPAI will simulate the motion within 3D space of the provided substrates and provide the user with a plethora of information regarding the state of each atom during the simulation.
+        </p>
+        <p>
+            SENPAI provides many tunable parameters, and allows for flawless script integration to better incorporate SENPAI in your workflow.
+        </p>
+
+
+
+        <br/><br/>
+        <h2>Noteworthy features</h2>
+        <ul>
+            <li><strong>Integrated potential reduction:</strong> Easily mitigate the issue of "garbage in, garbage out"! If told to do so, SENPAI will reduce the potential energy of the system to a user-selected target value before simulating. SENPAI sequentially runs several algorithms like gradient descent to properly set the system up for simulation.</li>
+
+            <li><strong>Analytical differentiation:</strong> Traditional MD simulators compute a particle's total potential and numerically differentiate it to compute the applied force. SENPAI analytically solves for the force vector, resulting in an extreme speedup. Should you prefer numerical potential differentiation, SENPAI offers two different numerical differentiation methods which can be configured as well!</li>
+
+            <li><strong>Easy to use file formats:</strong> The MDS, MDM, and MDP file formats developped for SENPAI can be hand-written! No need for special software. Quickly and easily prepare simulations and adjust them with no hassle. Simulations are rendered as XYZ, and can be immediately viewed using existing software without prior conversion!</li>
+
+            <li><strong>Efficient computing model:</strong> the ONICHaN (Optimized Numerical Integration, Classical Harmonics, and N-body) model was tailored for SENPAI over months of work. Inspired by the AMBER family of force fields, it allows SENPAI to compute forces with unprecedented efficiency.</li>
+        </ul>
+
+
+        
+        <br/><br/>
+        <h2>Source code</h2>
+        <p>Download the senpai source code here:</p>
+        <ul>
+            <li><a href="https://gitlab.chelsea486mhz.fr/Chelsea486MHz/senpai/-/releases">Personal GitLab</a></li>
+            <li><a href="https://github.com/Chelsea486MHz/senpai/releases/">GitHub</a></li>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/source/senpai-1.0.tar.gz">Latest release (1.0)</a></li>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/source/senpai-1.0.tar.gz">Release 1.0 (18-01-2022)</a></li>
+        </ul>
+
+
+
+        <br/><br/>
+        <h2>User manuals</h2>
+        <p>Some manuals to get you started with SENPAI</p>
+        <ul>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/manuals/installation.html">Installing SENPAI</a></li>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/manuals/first-simulation.html">Your first simulation</a></li>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/manuals/mds-format.html">Creating substrates (MDS files)</a></li>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/manuals/mdm-format.html">Creating models (MDM files)</a></li>
+        </ul>
+
+
+
+        <br/><br/>
+        <h2>Technological demonstrations</h2>
+        <p>The following simulations are available as technological demonstrations. A working SENPAI 1.0+ installation is required to run them.</p>
+        <ul>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/simulations/16-water.tar.gz">16 water molecules at STP</a></li>
+            <li><a href="https://www.chelsea486mhz.fr/senpai/simulations/64-water.tar.gz">64 water molecules at STP</a></li>
+        </ul>
+
+
+
+        <br/><br/>
+        <h2>Devlog</h2>
+        <h3>[2022-01-11] SENPAI has hit release 1.0 !</h3>
+        <p>It's been years since work started on SENPAI. Well, here it is. SENPAI is fully usable as a molecular dynamics simulator.<br/>
+           This doesn't mean it's done. There are still many features to be added, like solvation, fully implementing models instead of the current hardcoding... But this is it, SENPAI is usable. Have fun with it, start poking around with, maybe send us some feedback. Either way, thanks to the people around the world who have been supporting the project since its inception in 2018.</p>
+
+    </body>
+</html>
