@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../../css/style.css" />
+		<link
+			rel="shortcut icon"
+			href="../../favicon.png"
+			type="image/x-icon"
+		/>
+		<title>SENPAI Manuals</title>
+	</head>
+
+	<body>
+		<header>
+			<h1>SENPAI Manuals - First Simulation</h1>
+
+			<h3>
+				This manual covers the basics of running simulations using
+				SENPAI. At the end of the manual, the user is able to run basic
+				SENPAI simulations.
+			</h3>
+		</header>
+
+		<main>
+			<h2>Required software</h2>
+			<ul>
+				<li>A working SENPAI installation</li>
+				<li>
+					A few MB of usable disk space (the size varies from
+					simulation to simulation)
+				</li>
+			</ul>
+
+			<h2>Calling SENPAI</h2>
+			<p>
+				SENPAI has no graphical user interface. Development of a web
+				interface is in the works, but for now SENPAI is terminal only.
+			</p>
+
+			<p>
+				SENPAI requires many parameters to run, which may take several
+				lines on your terminal. We recommend using a shell script to
+				call SENPAI. Shell scripts have many advantages:
+			</p>
+
+			<ul>
+				<li>
+					Tweak parameters within the file: have the SENPAI parameters
+					saved as shell variables and easily tweak simulations by
+					editing a file.
+				</li>
+
+				<li>
+					Share simulations: SENPAI already requires several files for
+					a simulation. Easily share simulations by packaging the
+					script with the other files !
+				</li>
+
+				<li>
+					Repeatability: Just call the same file again instead of
+					bothering with a cumbersome 12-line command.
+				</li>
+			</ul>
+			<p>
+				SENPAI will not have its own scripting language or interpreter.
+				Shell scripting already works well enough and is flexible enough
+				for everyone to enjoy and use their own way. Shell scripting
+				also allows for advanced integration of SENPAI into existing and
+				future toolchains, allowing for greater integration into
+				existing workflows.
+			</p>
+
+			<h2>Writing a simulation script</h2>
+
+			<p>
+				This part is honnestly up to your own preferences. Everyone
+				writes those scripts differently. Here's an example script if
+				you want a place to start:
+			</p>
+
+			<p>
+				#!/bin/bash<br />
+				<br />
+				#<br />
+				# 16-water.sh<br />
+				# SENPAI technological demonstration<br />
+				# 2022-01-07 Chelsea Murgia<br />
+				#<br />
+				<br />
+				SIMULATION_NAME="16-water technologicial demonstration"<br />
+				AUTHOR_NAME="Chelsea Murgia"<br />
+				<br />
+				SUBSTRATE=water.mds<br />
+				SOLVENT=void.mds<br />
+				MODEL=senpai.mdm<br />
+				OUTPUT=16-water.xyz<br />
+				DURATION=0.1<br />
+				WATER_NB=16<br />
+				TARGET_POTENTIAL=0.1<br />
+				<br />
+				echo "[ INFO ] ${SIMULATION_NAME} by ${AUTHOR_NAME}"<br />
+				echo "[ INFO ] Starting SENPAI"<br />
+				senpai --substrate ${SUBSTRATE}\<br />
+				--solvent ${SOLVENT} \<br />
+				--out ${OUTPUT} \<br />
+				--model ${MODEL} \<br />
+				--time ${DURATION} \<br />
+				--copy ${WATER_NB} \<br />
+				--reduce_potential ${TARGET_POTENTIAL}<br />
+				<br />
+				if [ $? -ne 0 ]; then<br />
+				echo "[FAILED] SENPAI couldn't execute properly."<br />
+				exit 255<br />
+				else<br />
+				echo "[ OK ] SENPAI executed properly"<br />
+				exit 0<br />
+				fi
+			</p>
+
+			<h2>List of SENPAI arguments</h2>
+
+			<p>
+				Here is the full list of arguments that can be passed to SENPAI:
+			</p>
+
+			<h3>--substrate [string]</h3>
+
+			<p>
+				<strong>Required.</strong> Specifies the path to the substrate
+				to simulate
+			</p>
+
+			<h3>--solvent [string]</h3>
+
+			<p>
+				<strong>Required.</strong> Specified the path to the solvent
+				file
+			</p>
+
+			<h3>--out [string]</h3>
+
+			<p>
+				<strong>Required.</strong> Specifies the path to the output file
+			</p>
+
+			<h3>--model [string]</h3>
+
+			<p>
+				<strong>Required.</strong> Specifies the path to the model file
+			</p>
+
+			<h3>--numerical</h3>
+
+			<p>
+				Configures the simulation to use numerical differentiation of
+				the potential energy (defaults to analytical solving)
+			</p>
+
+			<h3>--numerical-tetra</h3>
+
+			<p>
+				Similar to --numerical, but numerical differentiation uses
+				points in a tetrahedron instead of points in an octahedron
+			</p>
+
+			<h3>--time [double]</h3>
+
+			<p>Specifies the simulation duration (ns) (defaults to 1ns)</p>
+
+			<h3>--dt [double]</h3>
+
+			<p>Specifies the timestep (fs) (defaults to 1 fs)</p>
+
+			<h3>--temp [double]</h3>
+
+			<p>
+				Specifies the thermodynamic temperature of the system (K)
+				(defaults to 298.15 K)
+			</p>
+
+			<h3>--pressure [double]</h3>
+
+			<p>
+				Specifies the pressure of the system (mbar) (defaults to 1 atm)
+			</p>
+
+			<h3>--density [double]</h3>
+
+			<p>
+				Specifies the density of the system (g.cm-3) (defaults to 1
+				g.cm-3)
+			</p>
+
+			<h3>--copy [unsigned integer]</h3>
+
+			<p>
+				Specifies how many copies of the loaded system are to be
+				inserted in the simulation
+			</p>
+
+			<h3>--frameskip [unsigned integer]</h3>
+
+			<p>Sets a frameskip to reduce I/O usage. Disabled by default</p>
+
+			<h3>--reduce_potential [double]</h3>
+
+			<p>
+				Reduces the potential energy to the provided value (pJ) or lower
+				(defaults to 10 pJ)
+			</p>
+
+			<h3>--srand [unsigned integer]</h3>
+
+			<p>
+				Specifies an unsigned integer seed for randomization. If the
+				seed is not specified, the program will default to a
+				random-enough seed.
+			</p>
+
+			<h2>Running the simulation</h2>
+
+			<p>
+				Call the script using your shell. Ensure the required files are
+				located in the script's directory and SENPAI has read and write
+				access to the directory.
+			</p>
+
+			<p>$ sh 16-water.sh</p>
+
+			<p>
+				SENPAI will proceed to load the substrate, dissolve it in the
+				solvent, and reduce the system's potential energy to the
+				specified target. This potential reduction phase preceeds the
+				simulation which won't start before the target potential is
+				reached.
+			</p>
+
+			<p>
+				Once the target potential is reached, SENPAI will create an XYZ
+				file (specified by the --out parameter) and write simulation
+				data inside. The file is appended every frame with the data for
+				each atom.
+			</p>
+
+			<p>
+				Once SENPAI exits, the simulation is over and the rendered file
+				can be opened by the user.
+			</p>
+		</main>
+	</body>
+</html>
