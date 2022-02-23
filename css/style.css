@@ -83,6 +83,7 @@ a:visited {
 	flex-basis: 25%;
 	border-radius: 1em;
 	margin: 1em;
+	min-width: fit-content;
 }
 
 .grid_text {
