@@ -1,0 +1,5 @@
+[senpaimd]
+name=SENPAI Molecular Dynamics
+baseurl=https://senpaimd.org/repo/rpm/x86_64
+enabled=1
+gpgcheck=1

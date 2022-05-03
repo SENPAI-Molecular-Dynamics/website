@@ -133,17 +133,6 @@
         </div>
 
         <div class="grid_item">
-          <h2>Installation packages</h2>
-          <p>To install on your system right away</p>
-          <ul>
-            <li>
-	      <a href="./rpm/senpai-1.1-1.x86_64.rpm">SENPAI 1.1 RPM (x86_64)</a> (Checksum: <a href="./rpm/senpai-1.1-1.x86_64.rpm.sha256sum">SHA256</a>)
-            </li>
-            </li>
-          </ul>
-        </div>
-
-        <div class="grid_item">
           <h2>User manuals</h2>
           <p>Some manuals to get you started with SENPAI</p>
           <ul>
@@ -185,6 +174,25 @@
           </ul>
         </div>
       </div>
+
+      <div class="grid_item">
+        <h2>Installation</h2>
+        <p>
+          SENPAI MD provides an RPM repository for RHEL-based distributions of Linux. Officially, SENPAI is only tested on Almalinux 8.5, but it should work on anything RPM-based.
+        </p>
+        <ul>
+          <li>
+	    <p>Install the SENPAIMD repo: # curl https://senpaimd.org/repo/rpm/x86_64/repodata/senpaimd.repo > /etc/yum.repos.d/senpaimd.repo</p>
+          </li>
+          <li>
+	    <p>Install its PGP key: # curl -O https://senpaimd.org/repo/rpm/RPM-GPG-KEY-senpaimd && rpm --import RPM-GPG-KEY-senpaimd</p>
+          </li>
+	  <li>
+	    <p>Refresh your repo cache and install the package: # dnf update && dnf install senpai</p>
+	  </li>
+        </ul>
+      </div>
+    </div>
 
       <div class="grid_text">
         <h2>Devlog</h2>
